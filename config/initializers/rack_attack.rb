@@ -84,28 +84,28 @@ class Rack::Attack
 
   ## Contact Us Block
   # IP per minute request
-  throttle("ip:contact-us-per-minute", limit: APP_CONFIGS['rate_limits']['login_minute_user'].to_i, period: 1.minute) do |req|
+  throttle("ip:contact-us-per-minute", limit: APP_CONFIGS['rate_limits']['contact_us_minute_user'].to_i, period: 1.minute) do |req|
     if req.contact_us?
       req.remote_ip
     end
   end
 
   # IP per day request
-  throttle("ip:contact-us-daily", limit: APP_CONFIGS['rate_limits']['login_minute_user'].to_i, period: 1.day) do |req|
+  throttle("ip:contact-us-daily", limit: APP_CONFIGS['rate_limits']['contact_us_minute_user'].to_i, period: 1.day) do |req|
     if req.contact_us?
       req.remote_ip
     end
   end
 
   # User per minute request
-  throttle("username:contact-us-limit-per-minute", limit: APP_CONFIGS['rate_limits']['login_minute_user'].to_i, period: 1.minute) do |req|
+  throttle("username:contact-us-limit-per-minute", limit: APP_CONFIGS['rate_limits']['contact_us_minute_user'].to_i, period: 1.minute) do |req|
     if req.contact_us?
       req.username
     end
   end
 
   # User per day request
-  throttle("username:contact-us-limit-daily", limit: APP_CONFIGS['rate_limits']['login_minute_user'].to_i, period: 1.day) do |req|
+  throttle("username:contact-us-limit-daily", limit: APP_CONFIGS['rate_limits']['contact_us_minute_user'].to_i, period: 1.day) do |req|
     if req.contact_us?
       req.username
     end
