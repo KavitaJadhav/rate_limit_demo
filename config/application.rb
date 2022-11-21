@@ -18,6 +18,7 @@ require "rails/test_unit/railtie"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+APP_CONFIGS = YAML.load(ERB.new(File.read('config/app_configs.yml')).result)
 
 module RateLimitDemo
   class Application < Rails::Application

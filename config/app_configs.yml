@@ -1,0 +1,9 @@
+rate_limits:
+  login_day_ip: 100
+  login_day_user: 10
+  login_minute_ip: 20
+  login_minute_user: 2
+  contact_us_day_ip: 50
+  contact_us_day_user: 5
+  contact_us_minute_ip: 10
+  contact_us_minute_user: 1
