@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   post 'sign_in', to: 'authentication#authenticate'
   post 'contact_us', to: 'support_ticket#create'
   get 'limits', to: 'rate_limits#limits'
+  get 'user_access_history', to: 'rate_limits#user_access_history'
 end
